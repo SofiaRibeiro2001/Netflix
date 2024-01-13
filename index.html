@@ -164,6 +164,23 @@
                 nav.classList.remove('nav__black')
             }
         })
+
+        const rowPosters = document.querySelector('.row__posters');
+        // Adicione o listener de evento quando o mouse passa pela área esquerda
+        rowPosters.addEventListener('mouseover', (event) => {
+            if (event.clientX < window.innerWidth / 3) {
+                rowPosters.style.transform = 'translateX(20px)'; // ajuste conforme necessário
+            } else if (event.clientX > (2 * window.innerWidth) / 3) {
+                rowPosters.style.transform = 'translateX(-20px)'; // ajuste conforme necessário
+            } else {
+                rowPosters.style.transform = 'translateX(0)';
+            }
+        });
+
+        // Adicione o listener de evento quando o mouse sai da área
+        rowPosters.addEventListener('mouseout', () => {
+            rowPosters.style.transform = 'translateX(0)';
+        });
     </script>
 </body>
 </html>
